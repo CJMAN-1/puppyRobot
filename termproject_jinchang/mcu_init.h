@@ -57,7 +57,19 @@ int GetResistor();
 int GetCDS();
 int GetLM35();
 int GetTHEMISTER();
+int GetPSD();
+double GetWATER();
 
+
+void Trigger();
+
+//////////////////////////////////////////////////////////////////
+// enum for Sensor
+enum{
+	WATER_MAX = 700,
+	WATER_MIN = 500
+};
+//////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////
 //enum for external interrupt
@@ -77,7 +89,7 @@ enum{
 	INT2_LOW_LEVEL = 0x00,
 	INT2_RESERVED = 0x10,
 	INT2_FALLING = 0x20,
-	INT2_RISING = 0x30,
+	INT2_RISING = 0x30, 
 	
 	INT3_LOW_LEVEL = 0x00,
 	INT3_RESERVED = 0x40,
@@ -255,8 +267,8 @@ enum{
 	ADC_MUX_CDS,
 	ADC_MUX_LM35,
 	ADC_MUX_THERMISTER,
-	ADC_MUX_CH4,
-	ADC_MUX_CH5,
+	ADC_MUX_PSD,
+	ADC_MUX_WATER,
 	ADC_MUX_CH6,
 	ADC_MUX_CH7
 };
