@@ -57,10 +57,10 @@ int GetResistor();
 int GetCDS();
 int GetLM35();
 int GetTHEMISTER();
+int GetGAS();
+int GetPOWER();
 int GetPSD();
 double GetWATER();
-
-
 void Trigger();
 
 //////////////////////////////////////////////////////////////////
@@ -269,8 +269,9 @@ enum{
 	ADC_MUX_THERMISTER,
 	ADC_MUX_PSD,
 	ADC_MUX_WATER,
-	ADC_MUX_CH6,
-	ADC_MUX_CH7
+	ADC_MUX_GAS, // 6번
+	ADC_MUX_POWER // 7번
+
 };
 
 //ADCSRA

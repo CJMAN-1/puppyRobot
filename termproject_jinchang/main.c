@@ -51,6 +51,20 @@ ISR(TIMER3_OVF_vect){
 	
 	TCNT3 = 64285; // Bottom 설정
 
+	//0.5초에 한번씩 실행
+	if(g_cnt>25)
+	{
+
+		//TransNumUart1(GetResistor()); TransUart1(','); TransUart1(' ');		
+		//TransNumUart1(GetCDS()); TransUart1(','); TransUart1(' ');
+		//TransNumUart1(GetLM35()); TransUart1(','); TransUart1(' ');
+		//TransNumUart1(GetTHEMISTER()); TransUart1(','); TransUart1(' ');
+		TransNumUart1(GetGAS()); TransUart1(','); TransUart1(' ');
+		//TransNumUart1(GetPOWER()); TransUart1(','); TransUart1(' ');
+		 
+		TransUart1('\n');         
+		TransUart1('\r');
+	}
 	Trigger();
 	
 	TransNumUart1(u_distance);
@@ -58,9 +72,6 @@ ISR(TIMER3_OVF_vect){
 	TransNumUart1(u_end);
 
 	TransUart1(13);
-	
-
-
 
 	//모터제어
 	OCR1A = 0;
@@ -82,11 +93,9 @@ int main(void)
 	
 	sei();
 
-	//PD 2(echo)
-	//PC 0(trigger)
-	
     while (1) 
-    {		
-		
+    {			
     }
+
+	return 0;
 }
